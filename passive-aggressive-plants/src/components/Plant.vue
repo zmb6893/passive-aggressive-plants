@@ -52,6 +52,9 @@ const getImage = () => {
 <style scoped>
 	/** BECK: Add styles! */
 	.vertical-flexbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
 	}
 
