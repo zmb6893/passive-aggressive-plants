@@ -4,7 +4,11 @@ import { SidebarMenu } from 'vue-sidebar-menu';
 import 'vue-sidebar-menu/dist/vue-sidebar-menu.css';
 import type { PlantComponentType } from '@/types/Components';
 import type { Plant } from '@/types/Plant';
+import { storeToRefs } from 'pinia';
+import { usePlantsStore } from '@/stores/plants';
 
+
+const store = usePlantsStore();
 const isSidebarExpanded = ref(false);
 
 const props = defineProps<{
@@ -31,7 +35,7 @@ const menu = ref([
     header: 'Add Plant',
     icon: addIcon,
     action: () => {
-      // Add logic for navigating to the plant form here
+      store.toggleAddPlant();
     },
   }
 ]);

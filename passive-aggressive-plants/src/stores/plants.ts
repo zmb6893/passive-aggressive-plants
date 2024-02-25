@@ -15,6 +15,12 @@ export const usePlantsStore = defineStore('plantComponents', () => {
 		}
 	};
 
+	let addingPlant = false;
+
+	function toggleAddPlant() {
+		addingPlant = !addingPlant;
+	}
+
 	function setCurrentPlant(plant: Plant) {
 		currentPlant = plant;
 	}
@@ -68,5 +74,13 @@ export const usePlantsStore = defineStore('plantComponents', () => {
 		return plants;
 	}
 
-	return { plants, currentPlant, getPlants, setCurrentPlant }
+	function addPlant(plant: Plant) {
+		const plantComponent: PlantComponentType = {
+			plant: plant,
+			image: '@/assets/normal.jpg'
+		};
+		plants.push(plantComponent);
+	}
+
+	return { plants, currentPlant, addingPlant, getPlants, setCurrentPlant, addPlant, toggleAddPlant }
 })

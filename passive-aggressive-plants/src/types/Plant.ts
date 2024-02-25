@@ -1,6 +1,6 @@
 export type Plant = {
 	name: string;
-	plantType: string;
+	plantType?: string;
 	moisture: StatRange;
 	ph?: StatRange;
 	nutrient?: StatRange;
