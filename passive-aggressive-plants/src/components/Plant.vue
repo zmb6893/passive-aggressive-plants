@@ -58,9 +58,30 @@ const getImage = () => {
     justify-content: center;
 	}
 
-	.chatbox {
+  .chatbox {
+    position: relative;
+    background-color: #f0f0f0; /* Light grey background */
+    border-radius: 15px; /* Rounded corners */
+    padding: 10px 20px; /* Padding around text */
+    margin-bottom: 20px; /* Space between chatbox and image */
+    width: 90%; /* Maximum width of chatbox */
+    word-wrap: break-word; /* Ensures text breaks to prevent overflow */
+    text-align: center; /* Centers the text horizontally */
 
-	}
+  }
+
+  .chatbox::after {
+    content: "";
+    position: absolute;
+    bottom: -10px; /* Position just below the chatbox */
+    left: 50%; /* Start from the middle of the chatbox */
+    width: 0;
+    height: 0;
+    border: 10px solid transparent; /* Creates the triangle */
+    border-top-color: #f0f0f0; /* Matches the background of the chatbox */
+    border-bottom: 0; /* Removes the bottom border */
+    margin-left: -10px; /* Centers the triangle correctly */
+  }
 
 	.plant-image {
     height: 50vmin
