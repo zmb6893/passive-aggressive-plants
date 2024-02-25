@@ -36,6 +36,10 @@ const openHamburgerMenu = () => {
 
 .horizontal-flexbox {
 	/** Beck, you know what to do */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: space-between;
 }
 
 .svg_menu_attrs {

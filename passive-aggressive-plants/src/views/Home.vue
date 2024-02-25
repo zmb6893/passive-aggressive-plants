@@ -16,18 +16,22 @@ let currentPlant: Plant = plantComponents[plantIndex].plant;
 
 <template>
 	<!-- Nav bar-->
-	<NavBarVue 
-		:plant-name="currentPlant.name" 
-		:plant-components="plantComponents">
-	</NavBarVue>
-	
-	<!-- Plant Selection -->
-	<SelectedPlantVue :plants="plantComponents"></SelectedPlantVue>
+  <div class="vertical-flexbox">
+    <NavBarVue
+      :plant-name="currentPlant.name"
+      :plant-components="plantComponents">
+    </NavBarVue>
 
-	<!-- Health Bar -->
-	<HealthBar :health-stats="currentPlant.moisture"></HealthBar>
+    <!-- Plant Selection -->
+    <SelectedPlantVue :plants="plantComponents"></SelectedPlantVue>
+
+    <!-- Health Bar -->
+    <HealthBar :health-stats="currentPlant.moisture"></HealthBar>
+  </div>
 </template>
 
 <style>
-
+  .vertical-flexbox {
+    justify-content: center;
+  }
 </style>

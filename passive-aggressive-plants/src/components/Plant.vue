@@ -52,7 +52,7 @@ const getImage = () => {
 <style scoped>
 	/** BECK: Add styles! */
 	.vertical-flexbox {
-
+    justify-content: center;
 	}
 
 	.chatbox {
@@ -60,6 +60,6 @@ const getImage = () => {
 	}
 
 	.plant-image {
-
+    height: 50vmin
 	}
 </style>

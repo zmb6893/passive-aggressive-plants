@@ -12,7 +12,6 @@ import Home from './views/Home.vue';
     </div>
   </header>
 
-  <Home></Home>
   <RouterView />
 </template>
 

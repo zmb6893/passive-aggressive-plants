@@ -36,11 +36,13 @@ const getPrevious = () => {
 <style scoped>
 	/** You have a lot more work to do beck...  */
 	.horizontal-flexbox {
-		
+    display: flex;
+    align-items: center;
+    justify-content: center;
 	}
 
   .direction_arrow {
-    height: 10%;
+    height: 20vmin;
     filter: invert(16%) sepia(20%) saturate(1428%) hue-rotate(46deg) brightness(86%) contrast(86%);
   }
 </style>
