@@ -9,7 +9,7 @@ defineProps<{
 }>()
 
 const goToLeaderBoard = () => {
-	
+
 }
 
 const openHamburgerMenu = () => {
@@ -24,12 +24,15 @@ const openHamburgerMenu = () => {
 		<h1> {{ plantName }}</h1>
 
 		<!-- Leaderboard icon -->
-    <img class="svg_menu_attrs" src="@/assets/leaderboard.svg" alt="leaderboard" @click="goToLeaderBoard()"/>
+    <div class="icons-container">
+      <img class="svg_menu_attrs" src="@/assets/leaderboard.svg" alt="leaderboard" @click="goToLeaderBoard()"/>
 
-		<!-- Hamburger Menu-->
+      <!-- Hamburger Menu-->
       <img class="svg_menu_attrs" src="@/assets/burger_yum.svg" alt="hamburger_button" @click="openHamburgerMenu()"/>
-		<HamburgerMenu :plant-components="plantComponents"></HamburgerMenu>
+      <HamburgerMenu :plant-components="plantComponents"></HamburgerMenu>
+    </div>
 	</div>
+
 </template>
 
 <style scoped>
@@ -37,14 +40,20 @@ const openHamburgerMenu = () => {
 .horizontal-flexbox {
 	/** Beck, you know what to do */
   display: flex;
-  align-items: center;
-  justify-content: center;
-  align-content: space-between;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #DDA15E;
+  padding: 0 20px;
+}
+
+.icons-container {
+  display: flex;
+  align-items: center; /* Ensures the icons are aligned in the middle vertically */
+  padding: 0 20px;
 }
 
 .svg_menu_attrs {
   height: 60px;
   filter: invert(16%) sepia(20%) saturate(1428%) hue-rotate(46deg) brightness(86%) contrast(86%);
 }
-
 </style>

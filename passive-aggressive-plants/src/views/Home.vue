@@ -34,4 +34,7 @@ let currentPlant: Plant = plantComponents[plantIndex].plant;
   .vertical-flexbox {
     justify-content: center;
   }
+  body {
+    background-color: #FFFFFB;
+  }
 </style>

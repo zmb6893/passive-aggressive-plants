@@ -42,7 +42,7 @@ const getPrevious = () => {
 	}
 
   .direction_arrow {
-    height: 20vmin;
+    height: 10vmin;
     filter: invert(16%) sepia(20%) saturate(1428%) hue-rotate(46deg) brightness(86%) contrast(86%);
   }
 </style>
