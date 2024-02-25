@@ -3,17 +3,20 @@
 import type { PlantComponentType } from '@/types/Components';
 import HamburgerMenu from './HamburgerMenu.vue';
 import { usePlantsStore } from '@/stores/plants';
+import { ref } from 'vue';
 
 defineProps<{
 	plantComponents: PlantComponentType[];
 }>()
 
+let showMenu = ref(false);
+
 const goToLeaderBoard = () => {
 
 }
 
-const openHamburgerMenu = () => {
-
+const toggleMenu = () => {
+  showMenu.value = !showMenu.value;
 }
 
 </script>
@@ -28,8 +31,8 @@ const openHamburgerMenu = () => {
       <img class="svg_menu_attrs" src="@/assets/leaderboard.svg" alt="leaderboard" @click="goToLeaderBoard()"/>
 
       <!-- Hamburger Menu-->
-      <img class="svg_menu_attrs" src="@/assets/burger_yum.svg" alt="hamburger_button" @click="openHamburgerMenu()"/>
-      <HamburgerMenu :plant-components="plantComponents"></HamburgerMenu>
+      <img class="svg_menu_attrs" src="@/assets/burger_yum.svg" alt="hamburger_button" @click="toggleMenu()"/>
+      <HamburgerMenu v-if="showMenu" :plant-components="plantComponents"></HamburgerMenu>
     </div>
 	</div>
 

@@ -38,7 +38,8 @@ const menu = ref([
 </script>
 
 <template>
-  <div :class="{ 'sidebar-expanded': isSidebarExpanded }">
+  <div 
+    :class="{ 'sidebar-expanded': isSidebarExpanded }">
     <SidebarMenu :menu="menu" @toggle="isSidebarExpanded = !isSidebarExpanded" />
     <div class="overlay" v-if="isSidebarExpanded"></div>
   </div>
