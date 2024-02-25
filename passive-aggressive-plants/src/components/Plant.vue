@@ -1,6 +1,9 @@
 <script setup lang="ts">
 
 import type { PlantComponentType } from '@/types/Components';
+import drowning_plant from "@/assets/drowning_plant.jpg";
+import dehydrated from "@/assets/dehydrated.jpg";
+import normal from "@/assets/normal.jpg";
 
 const props = defineProps<{ 
 	component: PlantComponentType,
@@ -22,11 +25,11 @@ const getComment = () => {
 
 const getImage = () => {
   if (props.component.plant.moisture.current > props.component.plant.moisture.max ) {
-    image = "@/assets/drowning_plant.jpg";
+    image = drowning_plant;
   } else if (props.component.plant.moisture.current < props.component.plant.moisture.min) {
-    image = "@/assets/dehydrated.jpg";
+    image = dehydrated;
   } else {
-    image = "@/assets/normal.jpg";
+    image = normal;
   }
   return image
 }
