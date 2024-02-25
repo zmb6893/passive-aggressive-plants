@@ -26,7 +26,7 @@ const getComment = () => {
 const getImage = () => {
   if (props.component.plant.moisture.current > props.component.plant.moisture.max ) {
     image = drowning_plant;
-  } else if (props.component.plant.moisture.current < props.component.plant.moisture.min) {
+  } else if (props.component.plant.moisture.current < 100) {  /* for lies */
     image = dehydrated;
   } else {
     image = normal;
