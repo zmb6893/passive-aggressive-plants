@@ -24,19 +24,10 @@ const openHamburgerMenu = () => {
 		<h1> {{ plantName }}</h1>
 
 		<!-- Leaderboard icon -->
-		<button @click="goToLeaderBoard()">
-			<span>
-				ADD ICON
-			</span>
-		</button>
+    <img class="svg_menu_attrs" src="@/assets/leaderboard.svg" alt="leaderboard" @click="goToLeaderBoard()"/>
 
 		<!-- Hamburger Menu-->
-		<button @click="openHamburgerMenu()">
-			<span>
-				ADD ICON
-			</span>
-		</button>
-
+      <img class="svg_menu_attrs" src="@/assets/burger_yum.svg" alt="hamburger_button" @click="openHamburgerMenu()"/>
 		<HamburgerMenu :plant-components="plantComponents"></HamburgerMenu>
 	</div>
 </template>
@@ -45,6 +36,11 @@ const openHamburgerMenu = () => {
 
 .horizontal-flexbox {
 	/** Beck, you know what to do */
+}
+
+.svg_menu_attrs {
+  height: 60px;
+  filter: invert(16%) sepia(20%) saturate(1428%) hue-rotate(46deg) brightness(86%) contrast(86%);
 }
 
 </style>

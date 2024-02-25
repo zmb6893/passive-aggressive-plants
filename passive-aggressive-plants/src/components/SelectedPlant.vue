@@ -22,21 +22,13 @@ const getPrevious = () => {
 <template>
 	<div class="horizontal-flexbox">
 		<!-- Left Arrow -->
-		<button @click="getPrevious()">
-			<span>
-				SET ICON HERE
-			</span>
-		</button>
+    <img class="direction_arrow" src="@/assets/left_arrow.svg" alt="left arrow" @click="getPrevious()"/>
 
 		<!-- Plant -->
 		<Plant :component="currentPlant"></Plant>
 
 		<!-- Right Arrow -->
-		<button @click="getNext()">
-			<span>
-				SET ICON HERE
-			</span>
-		</button>
+    <img class="direction_arrow" src="@/assets/right_arrow.svg" alt="right arrow" @click="getNext"/>
 	</div>
 	
 </template>
@@ -46,4 +38,9 @@ const getPrevious = () => {
 	.horizontal-flexbox {
 		
 	}
+
+  .direction_arrow {
+    height: 10%;
+    filter: invert(16%) sepia(20%) saturate(1428%) hue-rotate(46deg) brightness(86%) contrast(86%);
+  }
 </style>

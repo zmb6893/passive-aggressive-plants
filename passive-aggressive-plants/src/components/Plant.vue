@@ -7,6 +7,7 @@ const props = defineProps<{
 }>()
 
 let comment: string;
+let image: string;
 
 const getComment = () => {
 	if (props.component.plant.moisture.current > props.component.plant.moisture.max ) {
@@ -19,6 +20,17 @@ const getComment = () => {
 	return comment;
 }
 
+const getImage = () => {
+  if (props.component.plant.moisture.current > props.component.plant.moisture.max ) {
+    image = "@/assets/drowning_plant.jpg";
+  } else if (props.component.plant.moisture.current < props.component.plant.moisture.min) {
+    image = "@/assets/dehydrated.jpg";
+  } else {
+    image = "@/assets/normal.jpg";
+  }
+  return image
+}
+
 </script>
 
 <template>
@@ -29,7 +41,7 @@ const getComment = () => {
 		</div>
 
 		<!-- Plant Image -->
-		<img class="plant-image" :src="component.image" alt="Passive Aggressive Plant">
+		<img class="plant-image" :src="getImage()" alt="Passive Aggressive Plant">
 	</div>
 	
 </template>
