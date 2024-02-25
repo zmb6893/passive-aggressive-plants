@@ -28,10 +28,42 @@ const height = 16;
 		<rect :x="healthStats.current" y="0" :width="10" :height="height" fill="#000000"/>
 	</svg>
 	<!-- Text Descripting -->
+	<!-- Text Descripting -->
+
+	<div class="bar-description">
+    <div class="under-watered" :style="{flexBasis: length - max  + 'px'}">Under watered</div>
+    <div class="divider"></div> <!-- Divider after Golden Zone -->
+    <div class="golden-zone" :style="{flexBasis: max - min - 30 + 'px'}">Golden Zone</div>
+    <div class="divider"></div> <!-- Divider after Golden Zone -->
+    <div class="over-watered" :style="{flexBasis: length - max + 'px'}">Over watered</div>
+  </div>
+
 </template>
 
 <style scoped>
-	.health-bar {
-		border-radius: 50px;;
-	}
+
+.health-bar {
+  margin-bottom: 20px; /* Spacing between the bar and descriptions */
+  border-radius: 50px;
+}
+
+.bar-description {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.under-watered, .golden-zone, .over-watered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: large;
+}
+
+.divider {
+  height: 100%; /* Match the height of text sections or as needed */
+  width: 2px; /* Thickness of the divider */
+  background-color: #283618; /* Color of the divider */
+}
 </style>
