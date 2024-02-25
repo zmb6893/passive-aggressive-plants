@@ -5,6 +5,19 @@ import type { Plant, StatRange } from '@/types/Plant';
 
 export const usePlantsStore = defineStore('plantComponents', () => {
 	let plants: PlantComponentType[] = [];
+	let currentPlant: Plant = {
+		name: '',
+		plantType: 'default plant',
+		moisture: {
+			max: 0,
+			min: 0,
+			current: 0
+		}
+	};
+
+	function setCurrentPlant(plant: Plant) {
+		currentPlant = plant;
+	}
 
 	function getPlants(): PlantComponentType[] {
 		plants = [
@@ -55,5 +68,5 @@ export const usePlantsStore = defineStore('plantComponents', () => {
 		return plants;
 	}
 
-	return { plants, getPlants }
+	return { plants, currentPlant, getPlants, setCurrentPlant }
 })

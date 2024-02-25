@@ -10,7 +10,10 @@ const store = usePlantsStore();
 
 let plantComponents: PlantComponentType[] = store.getPlants();
 let plantIndex: number = 0;
-let currentPlant: Plant = plantComponents[plantIndex].plant;
+let currentPlant: Plant = store.currentPlant;
+if (currentPlant.plantType == "default plant") {
+	store.setCurrentPlant(plantComponents[plantIndex].plant);
+}
 
 </script>
 

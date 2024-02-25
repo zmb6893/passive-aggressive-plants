@@ -1,20 +1,30 @@
 <script setup lang="ts">
 import type { PlantComponentType } from '@/types/Components';
 import Plant from '@/components/Plant.vue';
+import { ref } from 'vue';
+import { usePlantsStore } from '@/stores/plants';
 
 const props = defineProps<{
 	plants: PlantComponentType[]
 }>()
 
-let currentPlant = props.plants[0];
+const store = usePlantsStore();
+
+let currentPlant = ref(props.plants[0]);
 let currentIndex = 0;
 
 const getNext = () => {
-	currentPlant = props.plants[(currentIndex + 1) % (props.plants.length - 1)];
+  currentIndex = (currentIndex + 1) % props.plants.length;
+  currentPlant.value = props.plants[currentIndex];
+  store.setCurrentPlant(currentPlant.value.plant);
+  console.log(currentPlant)
 }
 
 const getPrevious = () => {
-	currentPlant = props.plants[(currentIndex - 1) % (props.plants.length - 1)];
+  currentIndex = (currentIndex - 1 + props.plants.length) % props.plants.length;
+  currentPlant.value = props.plants[currentIndex];
+  store.setCurrentPlant(currentPlant.value.plant);
+  console.log(currentPlant)
 }
 
 </script>
@@ -28,7 +38,7 @@ const getPrevious = () => {
 		<Plant :component="currentPlant"></Plant>
 
 		<!-- Right Arrow -->
-    <img class="direction_arrow" src="@/assets/right_arrow.svg" alt="right arrow" @click="getNext"/>
+    <img class="direction_arrow" src="@/assets/right_arrow.svg" alt="right arrow" @click="getNext()"/>
 	</div>
 	
 </template>

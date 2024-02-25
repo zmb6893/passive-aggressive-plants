@@ -2,6 +2,7 @@
 
 import type { PlantComponentType } from '@/types/Components';
 import HamburgerMenu from './HamburgerMenu.vue';
+import { usePlantsStore } from '@/stores/plants';
 
 defineProps<{
 	plantName: string,
