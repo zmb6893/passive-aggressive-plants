@@ -14,22 +14,19 @@ let currentPlant: Plant = store.currentPlant;
 if (currentPlant.plantType == "default plant") {
 	store.setCurrentPlant(plantComponents[plantIndex].plant);
 }
-
+console.log(currentPlant)
 </script>
 
 <template>
 	<!-- Nav bar-->
   <div class="vertical-flexbox">
     <NavBarVue
-      :plant-name="currentPlant.name"
       :plant-components="plantComponents">
     </NavBarVue>
 
     <!-- Plant Selection -->
     <SelectedPlantVue :plants="plantComponents"></SelectedPlantVue>
 
-    <!-- Health Bar -->
-    <HealthBar :health-stats="currentPlant.moisture" :bar-length="500"></HealthBar>
   </div>
 </template>
 

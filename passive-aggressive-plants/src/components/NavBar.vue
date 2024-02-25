@@ -5,7 +5,6 @@ import HamburgerMenu from './HamburgerMenu.vue';
 import { usePlantsStore } from '@/stores/plants';
 
 defineProps<{
-	plantName: string,
 	plantComponents: PlantComponentType[];
 }>()
 
@@ -22,7 +21,7 @@ const openHamburgerMenu = () => {
 <template>
 	<div class="horizontal-flexbox">
 		<!-- Plant Name -->
-		<h1> {{ plantName }}</h1>
+		<h1> Passive Aggressive Plant </h1>
 
 		<!-- Leaderboard icon -->
     <div class="icons-container">

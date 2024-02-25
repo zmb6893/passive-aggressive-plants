@@ -3,6 +3,7 @@ import type { PlantComponentType } from '@/types/Components';
 import Plant from '@/components/Plant.vue';
 import { ref } from 'vue';
 import { usePlantsStore } from '@/stores/plants';
+import HealthBar from './HealthBar.vue';
 
 const props = defineProps<{
 	plants: PlantComponentType[]
@@ -35,7 +36,12 @@ const getPrevious = () => {
     <img class="direction_arrow" src="@/assets/left_arrow.svg" alt="left arrow" @click="getPrevious()"/>
 
 		<!-- Plant -->
-		<Plant :component="currentPlant"></Plant>
+		<div class="vertical-flexbox">
+			<Plant :component="currentPlant"></Plant>
+			<h1> {{ currentPlant.plant.name }}</h1>
+			<HealthBar :bar-length="500" :health-stats="currentPlant.plant.moisture"></HealthBar>
+		</div>
+		
 
 		<!-- Right Arrow -->
     <img class="direction_arrow" src="@/assets/right_arrow.svg" alt="right arrow" @click="getNext()"/>
@@ -55,4 +61,10 @@ const getPrevious = () => {
     height: 10vmin;
     filter: invert(16%) sepia(20%) saturate(1428%) hue-rotate(46deg) brightness(86%) contrast(86%);
   }
+  .vertical-flexbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+	}
 </style>
