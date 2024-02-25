@@ -41,11 +41,6 @@ const max_value = () => {
     <div class="over-watered" :style="{flexBasis: length - max + 'px'}">Over watered</div>
   </div>
 
-  <h1>{{max}}</h1>
-  <h1>{{min}}</h1>
-  <h1>{{length}}</h1>
-  <h1>{{healthStats.current}}</h1>
-
 </template>
 
 <style scoped>
