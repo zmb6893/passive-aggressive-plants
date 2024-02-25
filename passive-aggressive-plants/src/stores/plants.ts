@@ -13,9 +13,9 @@ export const usePlantsStore = defineStore('plantComponents', () => {
 					name: "Jeff",
 					plantType: "Grapefruit",
 					moisture: {
-						min: 4,
-						max: 6,
-						current: 1
+						min: 100,
+						max: 400,
+						current: 150
 					} as StatRange,
 					ph: undefined,
 					nutrient: undefined,
@@ -27,8 +27,8 @@ export const usePlantsStore = defineStore('plantComponents', () => {
 					name: "Greg",
 					plantType: "Succulent",
 					moisture: {
-						min: 5,
-						max: 20,
+						min: 50,
+						max: 300,
 						current: 84
 					} as StatRange,
 					ph: undefined,
@@ -41,9 +41,9 @@ export const usePlantsStore = defineStore('plantComponents', () => {
 					name: "Ariel",
 					plantType: "Basil",
 					moisture: {
-						min: 2,
-						max: 4,
-						current: 1
+						min: 200,
+						max: 400,
+						current: 600
 					} as StatRange,
 					ph: undefined,
 					nutrient: undefined,

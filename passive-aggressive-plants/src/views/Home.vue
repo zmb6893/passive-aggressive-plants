@@ -26,7 +26,7 @@ let currentPlant: Plant = plantComponents[plantIndex].plant;
     <SelectedPlantVue :plants="plantComponents"></SelectedPlantVue>
 
     <!-- Health Bar -->
-    <HealthBar :health-stats="currentPlant.moisture"></HealthBar>
+    <HealthBar :health-stats="currentPlant.moisture" :bar-length="500"></HealthBar>
   </div>
 </template>
 
