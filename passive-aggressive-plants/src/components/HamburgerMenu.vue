@@ -7,8 +7,8 @@ defineProps<{
 	plantComponents: PlantComponentType[];
 }>();
 
-const thirstyIcon = "BECK PUT IN THE ICON";
-const overWateredIcon = "... please?";
+const thirstyIcon = "passive-aggressive-plants/src/assets/sun.svg";
+const overWateredIcon = "passive-aggressive-plants/src/assets/water_drop.svg";
 
 const determineIcon = (plant: Plant) => {
 	const iconSrc: string = plant.moisture.current < plant.moisture.min ? thirstyIcon
